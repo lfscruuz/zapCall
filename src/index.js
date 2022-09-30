@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom';
-import App from './components/App.js'
+import Jogo from './components/Jogo.js';
 
 import './assets/css/reset.css';
 import './assets/css/style.css';
 
-ReactDOM.render(<App />, document.querySelector('.root'));
+ReactDOM.render(<Jogo />, document.querySelector('.root'));
