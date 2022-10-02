@@ -101,6 +101,9 @@ justify-content: space-between;
     color: ${props => props.escolha === 'ZAP!' ? '#2FBE34' : props.escolha === 'Quase Não Lembrei!' ? '#FF922E' : props.escolha === 'Não Lembrei' ? '#FF3030' : '#333333'};
     text-decoration: ${props => props.escolha ? 'line-through' : 'initial'}
  }
+> img:hover{
+    cursor: ${props => props.escolha ? 'initial' : 'pointer'};
+}
 `
 
 const EstiloPerguntaAberta = styled.li`
@@ -126,4 +129,7 @@ justify-content: space-between;
     bottom: 10px;
     right: 10px;
   }
+  > img:hover{
+    cursor: pointer;
+}
 `

@@ -40,4 +40,7 @@ margin: 20px;
   .verde{
     background-color: #2FBE34;
   }
+> button:hover{
+    cursor: pointer;
+}
 `
