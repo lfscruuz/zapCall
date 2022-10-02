@@ -1,18 +1,35 @@
-import Concluidas from "./Concluidas"
+import Concluidas from "./Concluidas";
+import Botoes from "./Botoes";
+import styled from "styled-components";
+export default function Footer({ numeroConcluidas, setNumeroConcluidas, botoes, setBotoes }) {
 
-export default function Footer({ numeroConcluidas, setNumeroConcluidas }) {
     return (
-        <div className='footer-concluidos'>
-            <div className='container-botoes'>
-                <button className='vermelho'>Não lembrei</button>
-                <button className='amarelo'>Quase não lembrei</button>
-                <button onClick={Zap} className='verde'>Zap!</button>
-            </div>
+        <FooterConcluidos>
+            
             <Concluidas numeroConcluidas={numeroConcluidas} />
-        </div>
+        </FooterConcluidos>
     )
 }
 
-function Zap(){
-    console.log('ZAP!')
-}
+const FooterConcluidos = styled.div`
+width: 100%;
+min-height: 50px;
+background-color: #FFFFFF;
+position: fixed;
+bottom: 0;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+font-family: 'Recursive';
+font-weight: 400;
+font-size: 18px;
+color: #333333;
+padding: 10px;
+> .container-botoes {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    margin: 20px;
+  }
+`

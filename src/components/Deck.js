@@ -1,9 +1,6 @@
-import PerguntaFechada from "./PerguntaFechada"
+import PerguntaFechada from "./PerguntaFechada";
 
-export default function Deck({ numeroConcluidas }) {
-
-    console.log(numeroConcluidas)
-
+export default function Deck({numeroConcluidas, setNumeroConcluidas}) {
     const perguntas = [
         { pergunta: 'O que é JSX?', resposta: 'Uma extensão de linguagem do JavaScript' },
         { pergunta: 'O React é __', resposta: 'uma biblioteca JavaScript para construção de interfaces' },
@@ -24,6 +21,7 @@ export default function Deck({ numeroConcluidas }) {
                     resposta={p.resposta}
                     index={i}
                     numeroConcluidas={numeroConcluidas}
+                    setNumeroConcluidas={setNumeroConcluidas}
                 />)}
         </ul>
     )

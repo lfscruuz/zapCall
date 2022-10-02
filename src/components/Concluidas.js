@@ -1,6 +1,5 @@
-export default function Concluidas({ numeroConcluidas }) {
-    console.log(numeroConcluidas)
+export default function Concluidas({ numeroConcluidas, botoes, setBotoes }) {
     return (
-        <p>1/4 concluidos</p>
+        <p>{numeroConcluidas}/8 concluidos</p>
     )
 }

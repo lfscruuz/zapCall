@@ -1,46 +1,129 @@
-import { useState } from 'react'
-import seta_play from '../assets/img/seta_play.png'
-import seta_virar from '../assets/img/seta_virar.png'
+import { useState } from 'react';
+import styled from 'styled-components';
+import seta_play from '../assets/img/seta_play.png';
+import seta_virar from '../assets/img/seta_virar.png';
+import icone_certo from '../assets/img/icone_certo.png';
+import icone_erro from '../assets/img/icone_erro.png';
+import icone_quase from '../assets/img/icone_quase.png';
+import Botoes from './Botoes';
 
-export default function PerguntaFechada({ pergunta, resposta, index, numeroConcluidas }) {
-    console.log(numeroConcluidas)
+export default function PerguntaFechada({ pergunta, resposta, index, numeroConcluidas, setNumeroConcluidas}) {
 
     const [concluiu, setConcluiu] = useState(false);
-    const [perguntar, setPerguntar] = useState(false);
     const [virar, setVirar] = useState(false);
+    const [perguntar, setPerguntar] = useState(false);
+    const [escolha, setEscolha] = useState('');
+
+    function zap() {
+        setEscolha('ZAP!');
+        setNumeroConcluidas(numeroConcluidas + 1);
+        setPerguntar(false);
+        setConcluiu(true)
+    }
+
+    function qnl() {
+        setEscolha('Quase Não Lembrei!');
+        setNumeroConcluidas(numeroConcluidas + 1);
+        setPerguntar(false);
+        setConcluiu(true)
+    }
+
+    function nl() {
+        setEscolha('Não Lembrei');
+        setNumeroConcluidas(numeroConcluidas + 1);
+        setPerguntar(false);
+        setConcluiu(true)
+    }
 
     function abrirPergunta() {
-        let pergunta = true;
-        setPerguntar(pergunta)
+        setPerguntar(true);
     }
 
     function virarPergunta() {
-        let vira = true;
-        setVirar(vira)
+        setVirar(true)
+    }
+
+    if (concluiu === true) {
+        return (
+            <EstiloPerguntaFechada escolha={escolha}>
+                <p>Pergunta {index + 1}</p>
+                <img src={escolha === 'ZAP!' ? icone_certo : escolha === 'Quase Não Lembrei!' ? icone_quase : icone_erro}/>
+            </EstiloPerguntaFechada>
+        )
     }
 
     if (perguntar === false) {
         return (
-            <li className='pergunta-fechada'>
+            <EstiloPerguntaFechada escolha={escolha}>
                 <p>Pergunta {index + 1}</p>
                 <img onClick={abrirPergunta} src={seta_play} alt='seta_play' />
-            </li>
+            </EstiloPerguntaFechada>
         )
     } else {
         if (virar == false) {
             return (
-                <li className='pergunta-aberta'>
+                <EstiloPerguntaAberta>
                     <p>{pergunta}</p>
                     <img onClick={virarPergunta} src={seta_virar} alt='seta_virar' />
-                </li>
+                </EstiloPerguntaAberta>
             )
         } else {
             return (
-                <li className='pergunta-aberta'>
+                <EstiloPerguntaAberta>
                     <p>{resposta}</p>
-                </li>
+                    <Botoes zap={zap} qnl={qnl} nl={nl} />
+
+                </EstiloPerguntaAberta>
+
             )
         }
     }
 
 }
+
+const EstiloPerguntaFechada = styled.li`
+width: 300px;
+height: 35px;
+background-color: #FFFFFF;
+margin: 12px;
+padding: 15px;
+box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+border-radius: 5px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+> p {
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: ${props => props.escolha === 'ZAP!' ? '#2FBE34' : props.escolha === 'Quase Não Lembrei!' ? '#FF922E' : props.escolha === 'Não Lembrei' ? '#FF3030' : '#333333'};
+    text-decoration: ${props => props.escolha ? 'line-through' : 'initial'}
+ }
+`
+
+const EstiloPerguntaAberta = styled.li`
+width: 300px;
+margin: 12px;
+padding: 15px;
+min-height: 100px;
+background: #FFFFD5;
+box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+border-radius: 5px;
+font-family: 'Recursive';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 22px;
+color: #333333;
+position: relative;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+> img{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+`

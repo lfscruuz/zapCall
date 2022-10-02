@@ -1,4 +1,4 @@
- .screen-container{
+ /* .screen-container{
   background-color: #FB6B6B;
   width: 100vw;
   min-height: 100vh;
@@ -8,19 +8,19 @@
   margin: 0px;
   padding: 0px;
   padding-bottom: 200px;
-}
+} */
 
-.logo-container {
+/* .logo-container {
   display: flex;
   align-items: center;
   margin: 40px 0 20px 0;
-}
+} */
 
-.logo-container img {
+/* .logo-container img {
   width: 52px;
-}
+} */
 
-.logo-container h1 {
+/* .logo-container h1 {
   font-family: 'Righteous';
   font-style: normal;
   font-weight: 400;
@@ -28,9 +28,9 @@
   line-height: 45px;
   color: #FFFFFF;
   margin-left: 20px;
-}
+} */
 
-.footer-concluidos {
+/* .footer-concluidos {
   width: 100%;
   min-height: 50px;
   background-color: #FFFFFF;
@@ -52,7 +52,7 @@
   width: 80%;
   justify-content: space-between;
   margin: 20px;
-}
+} */
 
 /* Você vai precisar trocar a cor dos botões e alguns textos!
   VERDE = "#2FBE34"
@@ -61,7 +61,7 @@
   CINZA = "#333333" 
 */
 
-.container-botoes > button {
+/* .container-botoes > button {
   width: 90px;
   font-family: 'Recursive';
   font-style: normal;
@@ -73,11 +73,11 @@
   justify-content: center;
   text-align: center;
   color: #FFFFFF;
-  /* background: blue; */
+  background: blue;
   border-radius: 5px;
-  /* border: 1px solid blue; */
+  border: 1px solid blue;
   padding:5px;
-}
+} */
 
 .verde{
   background-color: #2FBE34;
@@ -95,7 +95,7 @@
   background-color: #333333;
 }
 
-.pergunta-fechada {
+/* .pergunta-fechada {
   width: 300px;
   height: 35px;
   background-color: #FFFFFF;
@@ -141,4 +141,4 @@
   position: absolute;
   bottom: 10px;
   right: 10px;
-}
+} */
