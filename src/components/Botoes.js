@@ -10,22 +10,6 @@ export default function Botoes({zap, qnl, nl}) {
     )
 }
 
-const Botao = styled.div`
-width: 90px;
-  font-family: 'Recursive';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #FFFFFF;
-  border-radius: 5px;
-  padding:5px;
-`
-
 const ConainerBotoes = styled.div`
 display: flex;
 width: 80%;
@@ -46,5 +30,14 @@ margin: 20px;
   color: #FFFFFF;
   border-radius: 5px;
   padding:5px;
+  }
+  .vermelho{
+    background-color: #FF3030;
+  }
+  .amarelo{
+    background-color: #FF922E;
+  }
+  .verde{
+    background-color: #2FBE34;
   }
 `
