@@ -47,29 +47,29 @@ export default function PerguntaFechada({ pergunta, resposta, index, numeroConcl
         return (
             <EstiloPerguntaFechada escolha={escolha}>
                 <p>Pergunta {index + 1}</p>
-                <img src={escolha === 'ZAP!' ? icone_certo : escolha === 'Quase Não Lembrei!' ? icone_quase : icone_erro}/>
+                <img data-identifier="flashcard-status" src={escolha === 'ZAP!' ? icone_certo : escolha === 'Quase Não Lembrei!' ? icone_quase : icone_erro}/>
             </EstiloPerguntaFechada>
         )
     }
 
     if (perguntar === false) {
         return (
-            <EstiloPerguntaFechada escolha={escolha}>
+            <EstiloPerguntaFechada data-identifier="flashcard-index-item" escolha={escolha}>
                 <p>Pergunta {index + 1}</p>
-                <img onClick={abrirPergunta} src={seta_play} alt='seta_play' />
+                <img data-identifier="flashcard-show-btn" onClick={abrirPergunta} src={seta_play} alt='seta_play' />
             </EstiloPerguntaFechada>
         )
     } else {
         if (virar == false) {
             return (
-                <EstiloPerguntaAberta>
+                <EstiloPerguntaAberta data-identifier="flashcard-question">
                     <p>{pergunta}</p>
-                    <img onClick={virarPergunta} src={seta_virar} alt='seta_virar' />
+                    <img data-identifier="flashcard-turn-btn" onClick={virarPergunta} src={seta_virar} alt='seta_virar' />
                 </EstiloPerguntaAberta>
             )
         } else {
             return (
-                <EstiloPerguntaAberta>
+                <EstiloPerguntaAberta data-identifier="flashcard-answer">
                     <p>{resposta}</p>
                     <Botoes zap={zap} qnl={qnl} nl={nl} />
 

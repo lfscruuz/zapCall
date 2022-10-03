@@ -3,9 +3,9 @@ import styled from "styled-components"
 export default function Botoes({zap, qnl, nl}) {
     return (
         <ConainerBotoes>
-            <button onClick={nl} className='vermelho'>Não lembrei</button>
-            <button onClick={qnl} className='amarelo'>Quase não lembrei</button>
-            <button onClick={zap} className='verde'>Zap!</button>
+            <button data-identifier="forgot-btn" onClick={nl} className='vermelho'>Não lembrei</button>
+            <button data-identifier="almost-forgot-btn" onClick={qnl} className='amarelo'>Quase não lembrei</button>
+            <button data-identifier="zap-btn" onClick={zap} className='verde'>Zap!</button>
         </ConainerBotoes>
     )
 }

@@ -1,12 +1,11 @@
 import Concluidas from "./Concluidas";
 import Botoes from "./Botoes";
 import styled from "styled-components";
-export default function Footer({ numeroConcluidas, setNumeroConcluidas, botoes, setBotoes }) {
+export default function Footer({ numeroConcluidas }) {
 
     return (
         <FooterConcluidos>
-            
-            <Concluidas numeroConcluidas={numeroConcluidas} />
+            <Concluidas data-identifier="flashcard-counter" numeroConcluidas={numeroConcluidas} />
         </FooterConcluidos>
     )
 }

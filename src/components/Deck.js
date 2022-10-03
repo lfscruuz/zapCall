@@ -1,6 +1,6 @@
 import PerguntaFechada from "./PerguntaFechada";
 
-export default function Deck({numeroConcluidas, setNumeroConcluidas}) {
+export default function Deck({ numeroConcluidas, setNumeroConcluidas }) {
     const perguntas = [
         { pergunta: 'O que é JSX?', resposta: 'Uma extensão de linguagem do JavaScript' },
         { pergunta: 'O React é __', resposta: 'uma biblioteca JavaScript para construção de interfaces' },
@@ -16,6 +16,7 @@ export default function Deck({numeroConcluidas, setNumeroConcluidas}) {
         <ul>
             {perguntas.map((p, i) =>
                 <PerguntaFechada
+                    data-identifier="flashcard"
                     key={i}
                     pergunta={p.pergunta}
                     resposta={p.resposta}
