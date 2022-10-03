@@ -13,10 +13,9 @@ export default function Deck({ numeroConcluidas, setNumeroConcluidas }) {
     ]
 
     return (
-        <ul>
+        <ul data-identifier="flashcard">
             {perguntas.map((p, i) =>
                 <PerguntaFechada
-                    data-identifier="flashcard"
                     key={i}
                     pergunta={p.pergunta}
                     resposta={p.resposta}

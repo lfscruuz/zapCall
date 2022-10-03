@@ -4,8 +4,8 @@ import styled from "styled-components";
 export default function Footer({ numeroConcluidas }) {
 
     return (
-        <FooterConcluidos>
-            <Concluidas data-identifier="flashcard-counter" numeroConcluidas={numeroConcluidas} />
+        <FooterConcluidos data-identifier="flashcard-counter">
+            <Concluidas numeroConcluidas={numeroConcluidas} />
         </FooterConcluidos>
     )
 }
